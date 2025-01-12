@@ -1,0 +1,21 @@
+body nav {
+  background-color: #343a40 !important; /* Darker background color */
+}
+
+.navbar-brand,
+.nav-link {
+  color: #ffffff !important; /* White text color for better contrast */
+}
+
+.subheading {
+  color: bisque;
+}
+.cards {
+  background-color: rgb(71, 216, 168);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent !important; /* Ustaw przezroczyste tło */
+  background-image: none; /* Usuń domyślny obraz tła */
+}

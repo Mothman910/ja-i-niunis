@@ -19,3 +19,41 @@ body nav {
   background-color: transparent !important; /* Ustaw przezroczyste tło */
   background-image: none; /* Usuń domyślny obraz tła */
 }
+
+.card-title {
+  color: rgb(139, 139, 240);
+}
+
+.invert-colors {
+  /* background-color: rgb(36, 6, 43) !important; */
+  /* color: thistle !important; */
+  --mdb-body-color: #ffc977;
+  --mdb-card-bg: #160635 !important;
+  --mdb-surface-bg: #160635;
+  border-radius: 0;
+  background-color: rgb(55, 109, 56) !important;
+  --mdb-tertiary-bg-rgb: rgb(76 149 78) !important;
+  --mdb-secondary-color: rgba(214, 214, 214, 0.75);
+}
+
+.form-control {
+  width: 100%;
+}
+
+.form-outline {
+  margin: 10px;
+  width: 20% !important;
+}
+
+.form-todo button {
+  width: 15%;
+  margin: 10px;
+}
+
+.todo-list {
+  border-radius: 0;
+}
+
+.bg-body-tertiary {
+  --mdb-bg-opacity: 1;
+}

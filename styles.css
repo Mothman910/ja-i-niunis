@@ -1,3 +1,10 @@
+body {
+  width: 100vw;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
 body nav {
   background-color: #343a40 !important; /* Darker background color */
 }
@@ -42,7 +49,7 @@ body nav {
 
 .form-outline {
   margin: 10px;
-  width: 20% !important;
+  width: 20%;
 }
 
 .form-todo button {
@@ -58,12 +65,39 @@ body nav {
   --mdb-bg-opacity: 1;
 }
 
+.carousel-control-next {
+}
+
 @media screen and (max-width: 768px) {
   #loveModal {
     width: 90%;
   }
   .form-outline {
     width: 90%;
+  }
+  .form-todo button {
     min-width: 100px;
+  }
+  .carousel-control-next-icon {
+    position: relative;
+    right: 40px;
+  }
+  .carousel-control-prev-icon {
+    position: relative;
+    right: -40px;
+  }
+  .filter {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .filter input {
+    max-width: 100%;
+  }
+  .filter label {
+    display: block;
+    max-width: 100%;
+    padding: 10px 10px;
   }
 }

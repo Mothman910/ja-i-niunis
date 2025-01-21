@@ -354,7 +354,7 @@
             todo.innerHTML = `
             <input onclick="toggleStatus()" class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
               <h5 class="card-title">${element.title}</h5>
-              <p class="card-text">${element.completed ? 'Zrobione' : 'Nie zrobione'}</p>
+              <p class="card-text card-status" style="${element.completed ? 'color: green' : 'color: red'}">${element.completed ? 'Zrobione' : 'Nie zrobione'}</p>
               <button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
             `;
             todo_container.appendChild(todo);
@@ -403,7 +403,7 @@
         }
         document.getElementById('todo-list').innerHTML += `<div class="card-body">
           <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <h5 class="card-title card-elements">${title}</h5><p class="card-elements">Nie zrobione</p><button onclick="usunZadanie()" type="button" class="btn btn-outline-danger card-elements" data-mdb-ripple-init="" data-mdb-ripple-color="dark">Usuń zadanie</button>`;
+                    <h5 class="card-title card-elements">${title}</h5><p class="card-elements card-status" style='color: red'}">Nie zrobione</p><button onclick="usunZadanie()" type="button" class="btn btn-outline-danger card-elements" data-mdb-ripple-init="" data-mdb-ripple-color="dark">Usuń zadanie</button>`;
       }
       function usunZadanie() {
         event.preventDefault();

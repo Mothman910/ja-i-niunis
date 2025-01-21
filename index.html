@@ -351,17 +351,17 @@
       fetch('https://jsonplaceholder.typicode.com/todos')
         .then((response) => response.json())
         .then((data) => {
-          data.map((element) => {
+          for (let i = 0; i < 5; i++) {
+            let element = data[i];
             let todo = document.createElement('div');
             todo.classList.add('card-body');
             todo.innerHTML = `
-                    <h5 class="card-title">${element.title}</h5>
-                    <p class="card-text">${element.completed ? 'Zrobione' : 'Nie zrobione'}</p>
-                    <button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
-
-                  `;
+              <h5 class="card-title">${element.title}</h5>
+              <p class="card-text">${element.completed ? 'Zrobione' : 'Nie zrobione'}</p>
+              <button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
+            `;
             todo_container.appendChild(todo);
-          });
+          }
         });
     </script>
 

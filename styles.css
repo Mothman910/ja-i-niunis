@@ -1,5 +1,11 @@
+html {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 body {
-  width: 100vw;
+  overflow-x: hidden;
+  width: 100%;
   display: block;
   margin: 0;
   padding: 0;
@@ -63,6 +69,33 @@ body nav {
 
 .bg-body-tertiary {
   --mdb-bg-opacity: 1;
+}
+
+.card-body {
+  grid-template-columns: 1fr 9fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  display: grid;
+}
+
+.card-body input {
+  grid-row: 1 / 4;
+}
+
+.card-body button {
+  max-width: 200px;
+}
+
+.card-elements {
+  max-width: 500px;
+}
+
+.form-check-input {
+  align-self: center;
+  justify-self: center;
+}
+
+.form-check-input[type='checkbox']:checked {
+  background-color: #3bca6b;
 }
 
 @media screen and (max-width: 768px) {

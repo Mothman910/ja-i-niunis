@@ -181,10 +181,6 @@
             <input type="text" id="form1" class="form-control" />
             <label class="form-label" for="form1">Example label</label>
           </div>
-          <div class="form-outline" data-mdb-input-init>
-            <input type="text" id="form2" class="form-control" />
-            <label class="form-label" for="form2">Example label</label>
-          </div>
           <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark">Nowe zadanie</button>
         </form>
         <footer class="bg-body-tertiary text-center text-lg-start">
@@ -356,6 +352,7 @@
             let todo = document.createElement('div');
             todo.classList.add('card-body');
             todo.innerHTML = `
+            <input onclick="toggleStatus()" class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
               <h5 class="card-title">${element.title}</h5>
               <p class="card-text">${element.completed ? 'Zrobione' : 'Nie zrobione'}</p>
               <button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
@@ -400,13 +397,13 @@
         const form = event.target;
         const inputs = form.querySelectorAll('input');
         const title = inputs[0].value;
-        const body = inputs[1].value;
-        if (!title || !body) {
+        if (!title) {
           alert('Proszę wypełnić wszystkie pola!');
           return;
         }
         document.getElementById('todo-list').innerHTML += `<div class="card-body">
-                    <h5 class="card-title">${title}</h5><p>${body}</p><button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init="" data-mdb-ripple-color="dark">Usuń zadanie</button>`;
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                    <h5 class="card-title card-elements">${title}</h5><p class="card-elements">Nie zrobione</p><button onclick="usunZadanie()" type="button" class="btn btn-outline-danger card-elements" data-mdb-ripple-init="" data-mdb-ripple-color="dark">Usuń zadanie</button>`;
       }
       function usunZadanie() {
         event.preventDefault();
@@ -416,6 +413,20 @@
     <script>
       function toggleInvertColors() {
         document.body.classList.toggle('invert-colors');
+      }
+    </script>
+    <script>
+      function toggleStatus() {
+        event.preventDefault();
+        const card = event.target.parentElement;
+        const cardText = card.querySelector('.card-text');
+        if (cardText.textContent === 'Nie zrobione') {
+          cardText.textContent = 'Zrobione';
+          cardText.style.color = 'green';
+        } else {
+          cardText.textContent = 'Nie zrobione';
+          cardText.style.color = 'red';
+        }
       }
     </script>
   </body>

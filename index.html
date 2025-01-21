@@ -401,6 +401,10 @@
         const inputs = form.querySelectorAll('input');
         const title = inputs[0].value;
         const body = inputs[1].value;
+        if (!title || !body) {
+          alert('Proszę wypełnić wszystkie pola!');
+          return;
+        }
         document.getElementById('todo-list').innerHTML += `<div class="card-body">
                     <h5 class="card-title">${title}</h5><p>${body}</p><button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init="" data-mdb-ripple-color="dark">Usuń zadanie</button>`;
       }

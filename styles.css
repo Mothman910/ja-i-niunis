@@ -41,13 +41,11 @@ body nav {
 }
 
 .form-outline {
-  min-width: 150px;
   margin: 10px;
   width: 20% !important;
 }
 
 .form-todo button {
-  min-width: 100px;
   width: 15%;
   margin: 10px;
 }
@@ -63,5 +61,9 @@ body nav {
 @media screen and (max-width: 768px) {
   #loveModal {
     width: 90%;
+  }
+  .form-outline {
+    width: 90%;
+    min-width: 100px;
   }
 }

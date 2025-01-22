@@ -262,6 +262,9 @@
           <p class="card-elements card-status card-text" style="color: ${task.completed ? 'green' : 'red'}">${task.completed ? 'Zrobione' : 'Nie zrobione'}</p>
           <button onclick="usunZadanie(event)" type="button" class="btn btn-outline-danger card-elements" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
         `;
+        if (document.getElementById('option2').checked) {
+          taskElement.classList.add('visually-hidden');
+        }
         todoList.appendChild(taskElement);
       }
 

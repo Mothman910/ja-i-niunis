@@ -20,47 +20,7 @@
       }
     </style>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Strona główna</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="#">Action</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
-    </nav>
+  <body onload="loadTasks()">
     <header>
       <!-- Background image -->
       <div class="p-5 text-center bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/041.webp'); height: 400px">
@@ -69,7 +29,7 @@
             <div class="text-white">
               <h1 class="mb-3">Moja piękna Niunis &lt;3</h1>
               <h4 class="mb-3 subheading">Niespodzianka dla Ciebie :</h4>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loveModal">Kliknij</button>
+              <button onclick="preventPadding()" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loveModal">Kliknij</button>
             </div>
           </div>
         </div>
@@ -162,6 +122,7 @@
       </div>
       <!-- Carousel wrapper -->
     </main>
+
     <section>
       <div class="card">
         <div id="todo-list">
@@ -184,6 +145,10 @@
           <button type="submit" class="btn btn-outline-primary" data-mdb-ripple-init data-mdb-ripple-color="dark">Nowe zadanie</button>
         </form>
         <footer class="bg-body-tertiary text-center text-lg-start">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onclick="toggleInvertColors()" />
+            <label class="form-check-label" for="flexSwitchCheckDefault">Tryb kolorów jasny/ciemny</label>
+          </div>
           <!-- Copyright -->
           <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05)">
             © 2025 Copyright:
@@ -193,135 +158,7 @@
         </footer>
       </div>
     </section>
-    <div class="form-check form-switch">
-      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onclick="toggleInvertColors()" />
-      <label class="form-check-label" for="flexSwitchCheckDefault">Tryb kolorów jasny/ciemny</label>
-    </div>
-    <!-- Footer -->
-    <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-      <!-- Section: Social media -->
-      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-        <!-- Left -->
-        <div class="me-5 d-none d-lg-block">
-          <span>Get connected with us on social networks:</span>
-        </div>
-        <!-- Left -->
 
-        <!-- Right -->
-        <div>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-twitter"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-google"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="" class="me-4 text-reset">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <!-- Right -->
-      </section>
-      <!-- Section: Social media -->
-
-      <!-- Section: Links  -->
-      <section class="">
-        <div class="container text-center text-md-start mt-5">
-          <!-- Grid row -->
-          <div class="row mt-3">
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-              <!-- Content -->
-              <h6 class="text-uppercase fw-bold mb-4">
-                <i class="fas fa-gem me-3"></i>
-                Company name
-              </h6>
-              <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold mb-4">Products</h6>
-              <p>
-                <a href="#!" class="text-reset">Angular</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">React</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Vue</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Laravel</a>
-              </p>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
-              <p>
-                <a href="#!" class="text-reset">Pricing</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Settings</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Orders</a>
-              </p>
-              <p>
-                <a href="#!" class="text-reset">Help</a>
-              </p>
-            </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-              <!-- Links -->
-              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-              <p>
-                <i class="fas fa-home me-3"></i>
-                New York, NY 10012, US
-              </p>
-              <p>
-                <i class="fas fa-envelope me-3"></i>
-                info@example.com
-              </p>
-              <p>
-                <i class="fas fa-phone me-3"></i>
-                + 01 234 567 88
-              </p>
-              <p>
-                <i class="fas fa-print me-3"></i>
-                + 01 234 567 89
-              </p>
-            </div>
-            <!-- Grid column -->
-          </div>
-          <!-- Grid row -->
-        </div>
-      </section>
-      <!-- Section: Links  -->
-
-      <!-- Copyright -->
-      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">
-        © 2021 Copyright:
-        <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
     <!-- Modal -->
     <div class="modal fade" id="loveModal" tabindex="-1" aria-labelledby="loveModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -341,7 +178,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
     <!-- MDB -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mdb-ui-kit@8.1.0/js/mdb.umd.min.js"></script>
-    <!-- MDB -->
+    <!-- Pobranie danych a API -->
     <script>
       let todo_container = document.getElementById('todo-list');
       fetch('https://jsonplaceholder.typicode.com/todos')
@@ -352,7 +189,7 @@
             let todo = document.createElement('div');
             todo.classList.add('card-body');
             todo.innerHTML = `
-            <input onclick="toggleStatus()" class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+            <input onclick="toggleStatus()" class="form-check-input" type="checkbox" value="" id="flexCheckDefault" ${element.completed ? 'checked' : ''}/>
               <h5 class="card-title">${element.title}</h5>
               <p class="card-text card-status" style="${element.completed ? 'color: green' : 'color: red'}">${element.completed ? 'Zrobione' : 'Nie zrobione'}</p>
               <button onclick="usunZadanie()" type="button" class="btn btn-outline-danger" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
@@ -361,36 +198,40 @@
           }
         });
     </script>
-
+    <!-- Filtrowanie zadań -->
     <script>
-      document.querySelectorAll('input[name="options"]').forEach((input) => {
-        input.addEventListener('change', function () {
-          const value = this.value;
-          const cardBodies = document.querySelectorAll('.card-body');
+      function loadFilter() {
+        document.querySelectorAll('input[name="options"]').forEach((input) => {
+          input.addEventListener('change', function () {
+            const value = this.value;
+            const cardBodies = document.querySelectorAll('.card-body');
 
-          cardBodies.forEach((card) => {
-            const cardText = card.querySelector('.card-text');
-            const text = cardText.textContent.toLowerCase();
+            cardBodies.forEach((card) => {
+              const cardText = card.querySelector('.card-text');
+              const text = cardText.textContent.toLowerCase();
 
-            if (value === 'Zrobione') {
-              if (text == 'zrobione') {
-                card.classList.remove('visually-hidden');
+              if (value === 'Zrobione') {
+                if (text == 'zrobione') {
+                  card.classList.remove('visually-hidden');
+                } else {
+                  card.classList.add('visually-hidden');
+                }
+              } else if (value === 'Niezrobione') {
+                if (text == 'nie zrobione') {
+                  card.classList.remove('visually-hidden');
+                } else {
+                  card.classList.add('visually-hidden');
+                }
               } else {
-                card.classList.add('visually-hidden');
-              }
-            } else if (value === 'Niezrobione') {
-              if (text == 'nie zrobione') {
                 card.classList.remove('visually-hidden');
-              } else {
-                card.classList.add('visually-hidden');
               }
-            } else {
-              card.classList.remove('visually-hidden');
-            }
+            });
           });
         });
-      });
+      }
+      loadFilter();
     </script>
+    <!-- Tworzenie nowego zadania -->
     <script>
       function handleSubmit(event) {
         event.preventDefault();
@@ -401,13 +242,52 @@
           alert('Proszę wypełnić wszystkie pola!');
           return;
         }
-        document.getElementById('todo-list').innerHTML += `<div class="card-body">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                    <h5 class="card-title card-elements">${title}</h5><p class="card-elements card-status" style='color: red'}">Nie zrobione</p><button onclick="usunZadanie()" type="button" class="btn btn-outline-danger card-elements" data-mdb-ripple-init="" data-mdb-ripple-color="dark">Usuń zadanie</button>`;
+        const newTask = {
+          title: title,
+          completed: false,
+        };
+        addTaskToDOM(newTask);
+        saveTask(newTask);
+        form.reset();
+        loadFilter();
       }
-      function usunZadanie() {
+
+      function addTaskToDOM(task) {
+        const todoList = document.getElementById('todo-list');
+        const taskElement = document.createElement('div');
+        taskElement.classList.add('card-body');
+        taskElement.innerHTML = `
+          <input onclick="toggleStatus(event)" class="form-check-input" type="checkbox" ${task.completed ? 'checked' : ''} />
+          <h5 class="card-title card-elements">${task.title}</h5>
+          <p class="card-elements card-status card-text" style="color: ${task.completed ? 'green' : 'red'}">${task.completed ? 'Zrobione' : 'Nie zrobione'}</p>
+          <button onclick="usunZadanie(event)" type="button" class="btn btn-outline-danger card-elements" data-mdb-ripple-init data-mdb-ripple-color="dark">Usuń zadanie</button>
+        `;
+        todoList.appendChild(taskElement);
+      }
+
+      function saveTask(task) {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.push(task);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }
+
+      function loadTasks() {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks.forEach((task) => addTaskToDOM(task));
+      }
+
+      function usunZadanie(event) {
         event.preventDefault();
-        event.target.parentElement.remove();
+        const taskElement = event.target.parentElement;
+        const taskTitle = taskElement.querySelector('.card-title').textContent;
+        taskElement.remove();
+        removeTaskFromStorage(taskTitle);
+      }
+
+      function removeTaskFromStorage(taskTitle) {
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks = tasks.filter((task) => task.title !== taskTitle);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
       }
     </script>
     <script>
@@ -416,17 +296,28 @@
       }
     </script>
     <script>
-      function toggleStatus() {
-        event.preventDefault();
-        const card = event.target.parentElement;
-        const cardText = card.querySelector('.card-text');
-        if (cardText.textContent === 'Nie zrobione') {
-          cardText.textContent = 'Zrobione';
-          cardText.style.color = 'green';
-        } else {
-          cardText.textContent = 'Nie zrobione';
-          cardText.style.color = 'red';
-        }
+      function toggleStatus(event) {
+        const checkbox = event.target;
+        const taskElement = checkbox.parentElement;
+        const taskTitle = taskElement.querySelector('.card-title').textContent;
+        const taskStatus = taskElement.querySelector('.card-status');
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks = tasks.map((task) => {
+          if (task.title === taskTitle) {
+            task.completed = checkbox.checked;
+            taskStatus.textContent = task.completed ? 'Zrobione' : 'Nie zrobione';
+            taskStatus.style.color = task.completed ? 'green' : 'red';
+          }
+          return task;
+        });
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+      }
+    </script>
+    <script>
+      function preventPadding() {
+        let modal = document.querySelector('#loveModal');
+        modal.style.paddingRight = '0';
+        document.body.style.paddingRight = '0';
       }
     </script>
   </body>
